@@ -1,0 +1,26 @@
+---
+import { Image, Picture } from "astro:assets";
+import Logo from "~/assets/logo.png";
+import { ThemeToggle } from "./theme-toggle";
+---
+
+<header class="border-b-2 border-muted">
+  <div class="container flex items-center justify-between px-4 py-2 md:px-6 md:py-3">
+    <nav>
+      <a href="/">
+        <Picture
+          src={Logo}
+          alt="Logo"
+          width="90"
+          height="60"
+          class="h-12 w-16 md:h-[60px] md:w-[90px] dark:invert"
+        />
+      </a>
+    </nav>
+    <div class="flex">
+      <div class="h-9 w-9">
+        <ThemeToggle client:only="solid-js" />
+      </div>
+    </div>
+  </div>
+</header>
